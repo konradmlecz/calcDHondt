@@ -31,7 +31,7 @@ const NavStyled = styled.nav`
   max-width: 1200px;
   height: 38px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto 1fr auto;
   align-items: center;
   border-bottom: 1px solid ${props => props.theme.color.first};
 
@@ -70,6 +70,7 @@ export default function Nav() {
     return (
         <NavStyled>
             <LinkStyled to="./">{t("nav.link1")}</LinkStyled>
+            <LinkStyled to="./calc">{t("nav.link2")}</LinkStyled>
             <div/>
             <button onClick={handleLanguage}>{setLanguage(i18n.language)}</button>
         </NavStyled>

@@ -14,20 +14,20 @@ const BackgroundStyled = styled.div`
   justify-content: center;
   align-items: center;
 
-  div {
+  & div {
     width: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    svg {
+    & svg {
       width: 100%;
       opacity: 0.5;
     }
   }
 
   @media (min-width: 768px) {
-    div {
+    & div {
       width: 65%;
     }
   }
