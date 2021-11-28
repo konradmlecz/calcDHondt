@@ -35,7 +35,7 @@ const NavStyled = styled.nav`
   align-items: center;
   border-bottom: 1px solid ${props => props.theme.color.first};
 
-  & button {
+  & button.nav {
     color: ${props => props.theme.color.first};
     font-size: 1.2rem;
     font-weight: 600;
@@ -72,7 +72,7 @@ export default function Nav() {
             <LinkStyled to="./">{t("nav.link1")}</LinkStyled>
             <LinkStyled to="./calc">{t("nav.link2")}</LinkStyled>
             <div/>
-            <button onClick={handleLanguage}>{setLanguage(i18n.language)}</button>
+            <button className={'nav'} onClick={handleLanguage}>{setLanguage(i18n.language)}</button>
         </NavStyled>
     );
 }

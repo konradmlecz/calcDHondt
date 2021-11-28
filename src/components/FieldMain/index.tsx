@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 
 export const FieldStyled = styled.div`
-  width: 200px;
+  width: 160px;
   height: 50px;
-  margin: 0 10px;
+  margin: 5px;
   position: relative;
 
   & input {
@@ -33,24 +33,30 @@ export const FieldStyled = styled.div`
     }
   }
 
-  & p {
+  & p.error {
     color: red;
     width: 100%;
     position: absolute;
-    top: 50px;
+    top: 40px;
     margin: 0;
     font-size: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 700px) {
+    margin: 0px 10px;
     & input {
-      width: 200px;
+      //width: 200px;
       font-size: 1.6rem;
     }
 
-    & p {
+    & p.error {
+      top: 50px;
       font-size: 1.2rem;
     }
+  }
+
+  @media (min-width: 1050px) {
+    margin: 0px 20px;
   }
 `;
 
@@ -74,7 +80,7 @@ export default function FieldMain({text, name, type, options, error}: FieldMainI
                    {...register(name, options)}
                    placeholder={text}
             />
-            {error && <p>{error}</p>}
+            {error && <p className={'error'}>{error}</p>}
         </FieldStyled>
     );
 }

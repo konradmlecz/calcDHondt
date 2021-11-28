@@ -1,9 +1,9 @@
 export const INPUT = {
-    numberOfCommittees: "numberOfCommittees",
-    numberOfMandates: "numberOfMandates",
-    heightOfThreshold: "heightOfThreshold",
-    threshold: "threshold",
-    committees: "committees",
+    numberOfCommittees: 'numberOfCommittees',
+    numberOfMandates: 'numberOfMandates',
+    heightOfThreshold: 'heightOfThreshold',
+    threshold: 'threshold',
+    committees: 'committees',
 }
 
 

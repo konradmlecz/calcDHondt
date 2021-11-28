@@ -23,12 +23,13 @@ export const resources = {
                         committees: "Committee",
                         votes: "Number of votes",
                     },
-                    submit:"Calculate",
-                    errors:{
-                        number:"Field is not be empty and less 1",
-                        text:"Field is not be empty",
+                    submit: "Calculate",
+                    button: "Show form",
+                    errors: {
+                        number: "Field is not be empty and less 1",
+                        text: "Field is not be empty",
                     }
-                }
+                },
             }
         }
     },
@@ -56,12 +57,13 @@ export const resources = {
                         committees: "Nazwa komitetu",
                         votes: "Ilość głosów",
                     },
-                    submit:"Wylicz",
-                    errors:{
-                        number:"Pole nie może być puste ani mniejsze od 1",
-                        text:"Pole nie moze być puste",
+                    submit: "Wylicz",
+                    button: "Pokaż formularz",
+                    errors: {
+                        number: "Pole nie może być puste ani mniejsze od 1",
+                        text: "Pole nie moze być puste",
                     }
-                }
+                },
             }
         }
     }

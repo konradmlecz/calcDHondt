@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {ReactSVG} from 'react-svg'
 
 const BackgroundStyled = styled.div`
-  background-color: ${props => props.theme.color.third};
   z-index: -1;
   position: absolute;
   left: 50%;

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const ButtonStyled = styled.button`
   font-size: 1.2rem;
   font-weight: bold;
-  margin: 4px;
   font-family: ${props => props.theme.fontFamily.first};
   background-color: transparent;
   border-radius: 10px;
@@ -20,7 +19,6 @@ const ButtonStyled = styled.button`
 
   @media (min-width: 768px) {
     font-size: 1.6rem;
-    margin: 10px;
     padding: 5px 10px;
 
   }

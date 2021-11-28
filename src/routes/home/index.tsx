@@ -5,8 +5,10 @@ import {ContainerContentStyled} from 'components/ContainerContentStyled'
 import {useNavigate} from 'react-router-dom';
 import Button from 'components/Button'
 
-export const HomeStyled = styled(ContainerContentStyled)`
-  
+const HomeStyled = styled(ContainerContentStyled)`
+  align-self: center;
+  justify-self: center;
+
   & h1 {
     padding: 10px;
     letter-spacing: 4px;
@@ -29,6 +31,7 @@ export default function Home() {
     const handleClick = () => {
         navigate('/calc')
     }
+
     const navigate = useNavigate()
     return (
         <HomeStyled>
