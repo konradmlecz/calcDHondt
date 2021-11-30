@@ -1,48 +1,27 @@
-import React from 'react';
+import React, {useRef} from 'react'
 import styled from 'styled-components';
 import {ContainerContentStyled} from 'components/ContainerContentStyled'
 import {Bar} from 'react-chartjs-2';
 import {useAppSelector} from 'store';
+import {useSize} from 'helpers/useSize'
+import {setHeight} from "helpers/setHeight";
 
 
-export const CalcChartStyled = styled(ContainerContentStyled)`
+interface CalcChartStyledI {
+    readonly height: string;
+}
+
+
+const CalcChartStyled = styled(ContainerContentStyled)<CalcChartStyledI>`
   align-self: start;
-  position: relative;
-  height: 200px;
 
-  & canvas {
-    position: absolute !important;
-  }
+  div.chart--container {
+    height: ${props => props.height};
+    position: relative;
 
-  @media (min-width: 360px) {
-    height: 230px;
-  }
-  @media (min-width: 420px) {
-    height: 270px;
-  }
-
-  @media (min-width: 480px) {
-    height: 310px;
-  }
-
-  @media (min-width: 550px) {
-    height: 350px;
-  }
-  @media (min-width: 640px) {
-    height: 380px;
-
-  }
-  @media (min-width: 768px) {
-    height: 480px;
-  }
-  @media (min-width: 900px) {
-    height: 520px;
-  }
-  @media (min-width: 1024px) {
-    height: 600px;
-  }
-  @media (min-width: 1200px) {
-    height: 680px;
+    & canvas {
+      position: absolute !important;
+    }
   }
 `;
 
@@ -60,15 +39,18 @@ export const options = {
     },
 };
 
-
 export default function CalcChart() {
     const state = useAppSelector((state) => state.calc)
-    if (!state.chartIsDisplayed) return null
+    const div = useRef<HTMLDivElement>(null)
+    const size = useSize(div)
+    const height = setHeight(size)
+
     return (
-        <CalcChartStyled>
-            <Bar type="bar" data={state.chartData} options={options}/>
+        <CalcChartStyled height={height}>
+            <div className="chart--container" ref={div}>
+                <Bar type="bar" data={state.chartData} options={options}/>
+            </div>
         </CalcChartStyled>
     );
 }
-
 
